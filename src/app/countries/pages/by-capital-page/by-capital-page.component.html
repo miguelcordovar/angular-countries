@@ -7,13 +7,14 @@
     <shared-search-box
       placeholder="Buscar por Capital"
       (onSearch)="searchByCapital($event)"
+      [initialValue]="term"
     ></shared-search-box>
   </div>
 </div>
-<hr>
 <div class="row">
   <div class="col">
-    <!-- Tabla de Resultados -->
+    <hr>
+    <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
     <countries-country-table [countries]="countries"></countries-country-table>
   </div>
 </div>
